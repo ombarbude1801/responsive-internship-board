@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive Internship Board - Full Stack Development Internship Task">
+  <title>Internship Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Internship Board home">
+        <span class="brand-mark" aria-hidden="true">IB</span>
+        <span>Internship Board</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#internships">Internships</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">CAREER OPPORTUNITIES</p>
+        <h1>Find an internship that moves you forward.</h1>
+        <p class="hero-text">Explore beginner-friendly opportunities across technology, design, business and more.</p>
+      </div>
+    </section>
+
+    <section class="board container" id="internships" aria-labelledby="board-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OPEN ROLES</p>
+          <h2 id="board-title">Internship opportunities</h2>
+        </div>
+        <span class="result-count" id="resultCount" aria-live="polite"></span>
+      </div>
+
+      <form class="filters" id="filterForm" role="search" aria-label="Filter internships">
+        <div class="field search-field">
+          <label for="search">Search internships</label>
+          <input id="search" name="search" type="search" placeholder="Search by role or company..." autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="domain">Domain</label>
+          <select id="domain" name="domain">
+            <option value="all">All domains</option>
+            <option value="development">Development</option>
+            <option value="design">Design</option>
+            <option value="data">Data</option>
+            <option value="marketing">Marketing</option>
+          </select>
+        </div>
+
+        <button class="clear-btn" type="button" id="clearFilters">Clear filters</button>
+      </form>
+
+      <div class="status-message" id="errorState" role="alert" hidden>
+        Something went wrong while loading internships. Please refresh and try again.
+      </div>
+
+      <div class="status-message empty-state" id="emptyState" role="status" hidden>
+        <div class="empty-icon" aria-hidden="true">⌕</div>
+        <h3>No internships found</h3>
+        <p>Try a different keyword or select another domain.</p>
+        <button class="primary-btn" type="button" id="resetEmpty">Reset search</button>
+      </div>
+
+      <div class="cards" id="internshipList" aria-live="polite"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">BUILT FOR THIS TASK</p>
+          <h2>Simple, accessible and responsive.</h2>
+        </div>
+        <p>This project demonstrates semantic HTML, responsive CSS, DOM rendering, filtering, accessible labels, keyboard-friendly controls and clear empty/error states without a framework.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Internship Board</span>
+      <span>Built with HTML, CSS & JavaScript</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
